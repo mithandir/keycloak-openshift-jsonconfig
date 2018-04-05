@@ -1,6 +1,7 @@
 FROM jboss/keycloak-openshift
 
 ADD docker-entrypoint.sh /opt/jboss/
+ADD userprofile /opt/jboss/keycloak/themes/
 
 ENTRYPOINT [ "openshift-entrypoint.sh" ]
 
