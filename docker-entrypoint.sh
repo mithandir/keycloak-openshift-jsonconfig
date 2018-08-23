@@ -76,5 +76,5 @@ fi
 
 # Start Keycloak
 
-exec /opt/jboss/keycloak/bin/standalone.sh -Dkeycloak.migration.action=import -Dkeycloak.migration.provider=singleFile -Dkeycloak.migration.file=/etc/keycloak/keycloak-config.json -Dkeycloak.migration.strategy=OVERWRITE_EXISTING $@
+exec /opt/jboss/keycloak/bin/standalone.sh -Dkeycloak.migration.action=import -Dkeycloak.migration.provider=singleFile -Dkeycloak.migration.file=/etc/keycloak/keycloak-config.json -Dkeycloak.migration.strategy=OVERWRITE_EXISTING --server-config=standalone-ha.xml $@
 exit $?
