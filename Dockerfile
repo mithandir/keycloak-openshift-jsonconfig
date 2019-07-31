@@ -1,7 +1,7 @@
 FROM jboss/keycloak-openshift
 
-ADD docker-entrypoint.sh /opt/jboss/
+ADD application.keystore /opt/jboss/keycloak/standalone/configuration/
 
-ENTRYPOINT [ "openshift-entrypoint.sh" ]
+ENTRYPOINT [ "/opt/jboss/tools/docker-entrypoint.sh" ]
 
-CMD ["start-keycloak.sh", "-b", "0.0.0.0"]
+CMD ["-b", "0.0.0.0"]
